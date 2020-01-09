@@ -45,6 +45,9 @@ function Queue() {
 
   this.prev = function () {
     index -= 2;
+    if (index < 0) {
+      return this;
+    }
     this.next();
     return this;
   };
