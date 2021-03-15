@@ -6,12 +6,12 @@
 
 
 #### 使用
+
 - 为测试明了将各demo拷贝单独执行
-##### 
+
+- 001
+
 ```javascript
-
-  // *** 001
-
   var queue = new Queue();
 
   queue.push2queue(function (next, again) {
@@ -33,11 +33,12 @@
     console.log('a3');
     queue.next();
   });
+```
 
+- 002
 
-  // *** 002
-
-  var queue2 = new Queue();
+```javascript
+var queue2 = new Queue();
 
   queue2.push2queue(function (next, again) {
 
@@ -51,11 +52,11 @@
       }
     }, 1000);
   });
+```
 
+- 003
 
-  // *** 003
-
-
+```javascript
   var queue3 = new Queue();
 
   queue3.push2queue(function (next, again) {
@@ -69,9 +70,11 @@
       queue3.prev();
     }, 1000);
   });
+```
 
-  // *** 004
+- 004
 
+```javascript
   var queue4 = new Queue();
 
   queue4.push2queue(function (next, again) {
@@ -88,10 +91,11 @@
     console.log('c3');
     next();
   });
+```
 
+- 005
 
-  // *** 005
-
+```javascript
   var queue5 = new Queue();
 
   for (var i = 0; i < 10; i++) {
@@ -101,21 +105,22 @@
     });
   }
   console.log('d-queueList' + queue5.getQueue());
+```
 
+- 006
 
-  // *** 006
-
+```javascript
   var queue6 = new Queue();
   queue6.push2queue(function (next, again) {
     console.log(next === queue6.next); // true
     console.log(again === queue6.again); // true
 
   });
+```
 
+- 007
 
-  // *** 007
-  // 实例方法已经实现了所有Array.prototype上的方法
-
+```javascript
   var queue7 = new Queue();
 
   queue7.push2queue(function (next) {
@@ -128,10 +133,11 @@
   queue7.push(test);
   console.log(queue7.getQueue()[1] === test); // true
   console.log(queue7.pop() === test); // true
-  console.log(Object.keys(queue7)); //["concat", "find", "findIndex", "pop", "push", "shift", "unshift", "slice", "splice", "includes", "indexOf", "keys", "entries", "forEach", "filter", "map", "every", "some", "reduce", "reduceRight", "toString", "toLocaleString", "join", "reverse", "sort", "lastIndexOf", "copyWithin", "fill", "values", "flat", "flatMap", "push2queue", "prev", "next", "again", "getIndex", "getQueue", "empty"]
+```
 
-  // *** 008
-  // apis
+- api
+
+```javascript
   // queue.push2queue(fn) // 添加队列并立即执行
   // queue.again()  // 重新执行当前对应的队列
   // queue.prev()  // 执行上一个
@@ -139,13 +145,10 @@
   // queue.getIndex() // 获取当前队列位置
   // queue.getQueue() // 获取队列列表
   // queue.empty() // 清空队列
+```
 
+- 实例方法已经实现了所有Array.prototype上的方法
 
-  //
-  //
-  //
-  //
-  //
-  //
-
+```javascript
+  console.log(Object.keys(queue)); //["concat", "find", "findIndex", "pop", "push", "shift", "unshift", "slice", "splice", "includes", "indexOf", "keys", "entries", "forEach", "filter", "map", "every", "some", "reduce", "reduceRight", "toString", "toLocaleString", "join", "reverse", "sort", "lastIndexOf", "copyWithin", "fill", "values", "flat", "flatMap", "push2queue", "prev", "next", "again", "getIndex", "getQueue", "empty"]
 ```
